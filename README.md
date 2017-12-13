@@ -32,6 +32,6 @@ JMColumnMenu *menuVC1 = [[JMColumnMenu alloc] initWithTagsArrM:myTagsArrM OtherA
     NSLog(@"点击的标题---%@  对应的index---%zd",title, index);
 }
 ```
-联系我:
-    qq: 1245424073
+联系我:<br>
+   *    qq: 1245424073
 [我的博客](https://ljmvip.cn)
