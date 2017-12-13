@@ -125,7 +125,7 @@
     
     UIButton *navCloseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     navCloseBtn.frame = CGRectMake(self.navView.width - 30, CGRectGetMinY(self.navTitle.frame), 20, 20);
-    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"Resource" ofType:@"bundle"]];
+    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"JMColumnMenu" ofType:@"bundle"]];
     NSString *path = [bundle pathForResource:@"close_one" ofType:@"png"];
     [navCloseBtn setImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateNormal];
     self.navCloseBtn = navCloseBtn;

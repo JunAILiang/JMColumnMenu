@@ -20,8 +20,8 @@
 		CB0FCFAD1FDFA0B40075C50B /* UIView+JM.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FCFA01FDFA0B30075C50B /* UIView+JM.m */; };
 		CB0FCFAE1FDFA0B40075C50B /* JMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FCFA11FDFA0B30075C50B /* JMConfig.m */; };
 		CB0FCFAF1FDFA0B40075C50B /* JMColumnMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FCFA81FDFA0B30075C50B /* JMColumnMenuCell.m */; };
-		CB0FCFB01FDFA0B40075C50B /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB0FCFA91FDFA0B30075C50B /* Resource.bundle */; };
 		CB0FCFB11FDFA0B40075C50B /* JMColumnMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FCFAA1FDFA0B30075C50B /* JMColumnMenuHeaderView.m */; };
+		CB6FF4FE1FE0EE6600BA9A39 /* JMColumnMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB6FF4FD1FE0EE6600BA9A39 /* JMColumnMenu.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +64,13 @@
 		CB0FCFA11FDFA0B30075C50B /* JMConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMConfig.m; sourceTree = "<group>"; };
 		CB0FCFA21FDFA0B30075C50B /* JMColumnMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMColumnMenuCell.h; sourceTree = "<group>"; };
 		CB0FCFA31FDFA0B30075C50B /* JMColumnMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMColumnMenuHeaderView.h; sourceTree = "<group>"; };
-		CB0FCFA41FDFA0B30075C50B /* JMColumnMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMColumnMenu.h; sourceTree = "<group>"; };
 		CB0FCFA51FDFA0B30075C50B /* JMColumnMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMColumnMenuModel.h; sourceTree = "<group>"; };
 		CB0FCFA61FDFA0B30075C50B /* JMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMConfig.h; sourceTree = "<group>"; };
 		CB0FCFA71FDFA0B30075C50B /* UIView+JM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JM.h"; sourceTree = "<group>"; };
 		CB0FCFA81FDFA0B30075C50B /* JMColumnMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMColumnMenuCell.m; sourceTree = "<group>"; };
-		CB0FCFA91FDFA0B30075C50B /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
 		CB0FCFAA1FDFA0B30075C50B /* JMColumnMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMColumnMenuHeaderView.m; sourceTree = "<group>"; };
+		CB6FF4FD1FE0EE6600BA9A39 /* JMColumnMenu.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JMColumnMenu.bundle; sourceTree = "<group>"; };
+		CB6FF4FF1FE0EEA500BA9A39 /* JMColumnMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMColumnMenu.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,19 +156,19 @@
 		CB0FCF9D1FDFA0B30075C50B /* JMColumnMenu */ = {
 			isa = PBXGroup;
 			children = (
-				CB0FCF9E1FDFA0B30075C50B /* JMColumnMenuModel.m */,
+				CB6FF4FD1FE0EE6600BA9A39 /* JMColumnMenu.bundle */,
+				CB6FF4FF1FE0EEA500BA9A39 /* JMColumnMenu.h */,
 				CB0FCF9F1FDFA0B30075C50B /* JMColumnMenu.m */,
-				CB0FCFA01FDFA0B30075C50B /* UIView+JM.m */,
+				CB0FCFA61FDFA0B30075C50B /* JMConfig.h */,
 				CB0FCFA11FDFA0B30075C50B /* JMConfig.m */,
 				CB0FCFA21FDFA0B30075C50B /* JMColumnMenuCell.h */,
-				CB0FCFA31FDFA0B30075C50B /* JMColumnMenuHeaderView.h */,
-				CB0FCFA41FDFA0B30075C50B /* JMColumnMenu.h */,
-				CB0FCFA51FDFA0B30075C50B /* JMColumnMenuModel.h */,
-				CB0FCFA61FDFA0B30075C50B /* JMConfig.h */,
-				CB0FCFA71FDFA0B30075C50B /* UIView+JM.h */,
 				CB0FCFA81FDFA0B30075C50B /* JMColumnMenuCell.m */,
-				CB0FCFA91FDFA0B30075C50B /* Resource.bundle */,
+				CB0FCFA51FDFA0B30075C50B /* JMColumnMenuModel.h */,
+				CB0FCF9E1FDFA0B30075C50B /* JMColumnMenuModel.m */,
 				CB0FCFAA1FDFA0B30075C50B /* JMColumnMenuHeaderView.m */,
+				CB0FCFA31FDFA0B30075C50B /* JMColumnMenuHeaderView.h */,
+				CB0FCFA71FDFA0B30075C50B /* UIView+JM.h */,
+				CB0FCFA01FDFA0B30075C50B /* UIView+JM.m */,
 			);
 			path = JMColumnMenu;
 			sourceTree = "<group>";
@@ -280,9 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0FCF781FDFA0310075C50B /* LaunchScreen.storyboard in Resources */,
+				CB6FF4FE1FE0EE6600BA9A39 /* JMColumnMenu.bundle in Resources */,
 				CB0FCF751FDFA0310075C50B /* Assets.xcassets in Resources */,
 				CB0FCF731FDFA0310075C50B /* Main.storyboard in Resources */,
-				CB0FCFB01FDFA0B40075C50B /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

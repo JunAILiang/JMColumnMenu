@@ -36,7 +36,7 @@
         [self.emptyView addSubview:self.title];
         
         //关闭按钮
-        NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"Resource" ofType:@"bundle"]];
+        NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"JMColumnMenu" ofType:@"bundle"]];
         NSString *path = [bundle pathForResource:@"close" ofType:@"png"];
         self.closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.closeBtn setImage:[UIImage imageWithContentsOfFile:path] forState:UIControlStateNormal];
