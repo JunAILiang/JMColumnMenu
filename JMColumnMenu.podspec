@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 
   s.source_files  = "JMColumnMenu/JMColumnMenu/**/*.{h,m}"
 
-  s.resource = 'JMColumnMenu/JMColumnMenu.bundle'
+  s.resource = 'JMColumnMenu/JMColumnMenu/JMColumnMenu.bundle'
 
   s.requires_arc = true
 

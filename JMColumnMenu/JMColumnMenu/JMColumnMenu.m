@@ -158,7 +158,7 @@
 
 #pragma mark - 手势识别
 - (void)longPress:(UIGestureRecognizer *)longPress {
-    NSLog(@"长按手势开始");
+//    NSLog(@"长按手势开始");
     //获取点击在collectionView的坐标
     CGPoint point=[longPress locationInView:self.collectionView];
     //从长按开始
@@ -192,7 +192,11 @@
 #pragma mark - UICollectionViewDataSource
 //一共有多少组
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+    if (self.otherArrM) {
+        return 2;
+    } else {
+        return 1;
+    }
 }
 
 //每一组有多少个cell
@@ -255,7 +259,6 @@
 
 #pragma mark - 头部编辑按钮点击事件
 - (void)headViewEditBtnClick {
-    NSLog(@"头部视图");
     if ([self.editBtnStr containsString:@"编辑"]) {
         self.editBtnStr = @"完成";
         [self.headerView.editBtn setTitle:@"完成" forState:UIControlStateNormal];
@@ -335,7 +338,11 @@
         }
         
         model.selected = NO;
-        model.showAdd = YES;
+        if (model.type == JMColumnMenuTypeTencent) {
+            model.showAdd = NO;
+        } else if (model.type == JMColumnMenuTypeTouTiao) {
+            model.showAdd = YES;
+        }
         [collectionView reloadItemsAtIndexPaths:@[indexPath]];
         
         [self.tagsArrM removeObjectAtIndex:indexPath.item];
@@ -389,13 +396,13 @@
 
 //在开始移动是调动此代理方法
 - (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"开始移动");
+//    NSLog(@"开始移动");
     return YES;
 }
 
 //在移动结束的时候调用此代理方法
 - (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    NSLog(@"结束移动");
+//    NSLog(@"结束移动");
     JMColumnMenuModel *model;
     if (sourceIndexPath.section == 0) {
         model = self.tagsArrM[sourceIndexPath.item];
