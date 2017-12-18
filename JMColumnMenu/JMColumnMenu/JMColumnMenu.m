@@ -31,6 +31,8 @@
 @property (nonatomic, weak) UICollectionView *collectionView;
 /** 头部视图 */
 @property (nonatomic, weak) JMColumnMenuHeaderView *headerView;
+/** 头部视图1 */
+@property (nonatomic, weak) JMColumnMenuHeaderView *headerView1;
 /** 长按手势 */
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPress;
 /** 引用headView编辑字符串 */
@@ -253,7 +255,6 @@
         self.headerView = headerView;
         return headerView;
     }
-    
     return nil;
 }
 
@@ -448,6 +449,15 @@
     if ([self.delegate respondsToSelector:@selector(columnMenuTagsArr:OtherArr:)]) {
         [self.delegate columnMenuTagsArr:tempTagsArrM OtherArr:tempOtherArrM];
     }
+    
+    if (self.otherArrM.count <= 0 || self.otherArrM == nil) {
+//        NSLog(@"%@",self.headerView);
+        self.headerView.hidden = YES;
+        [self.collectionView reloadData];
+    } else {
+        self.headerView.hidden = NO;
+    }
+    
 }
 
 #pragma mark - 导航栏右侧关闭按钮点击事件
