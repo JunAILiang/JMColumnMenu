@@ -109,8 +109,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-
 }
 
 #pragma mark - 初始化UI
@@ -155,14 +153,27 @@
     
     //添加长按的手势
     self.longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
-    if (self.type == JMColumnMenuTypeTencent) {
+//    if (self.type == JMColumnMenuTypeTencent) {
         [self.collectionView addGestureRecognizer:self.longPress];
-    }
+//    }
    
 }
 
 #pragma mark - 手势识别
 - (void)longPress:(UIGestureRecognizer *)longPress {
+    if ([self.editBtnStr containsString:@"编辑"] && self.type == JMColumnMenuTypeTouTiao) {
+        self.editBtnStr = @"完成";
+        for (int i = 0; i < self.tagsArrM.count; i++) {
+            JMColumnMenuModel *model = self.tagsArrM[i];
+            if (i != 0) {
+                model.selected = YES;
+            }
+        }
+//        NSIndexPath *indexPath = [NSIndexPath]
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+        [self.collectionView reloadSections:indexSet];
+//        [self.collectionView reloadData];
+    }
 //    NSLog(@"长按手势开始");
     //获取点击在collectionView的坐标
     CGPoint point=[longPress locationInView:self.collectionView];
@@ -173,19 +184,23 @@
     //        return;
     //    }
     
+    
     if (longPress.state == UIGestureRecognizerStateBegan) {
-        if (indexPath.item == 0) {
+        if (indexPath.section == 0 && indexPath.item == 0) {
             return;
         }
         [self.collectionView beginInteractiveMovementForItemAtIndexPath:indexPath];
         //长按手势状态改变
+//        NSLog(@"开始");
     } else if(longPress.state==UIGestureRecognizerStateChanged) {
-        if (indexPath.item == 0) {
+        if (indexPath.section == 0 && indexPath.item == 0) {
             return;
         }
+//        NSLog(@"改变");
         [self.collectionView updateInteractiveMovementTargetPosition:point];
         //长按手势结束
     } else if (longPress.state==UIGestureRecognizerStateEnded) {
+//        NSLog(@"结束");
         [self.collectionView endInteractiveMovement];
         //其他情况
     } else {
@@ -267,7 +282,7 @@
         self.editBtnStr = @"完成";
         [self.headerView.editBtn setTitle:@"完成" forState:UIControlStateNormal];
         
-        [self.collectionView addGestureRecognizer:self.longPress];
+//        [self.collectionView addGestureRecognizer:self.longPress];
         
         for (int i = 0; i < self.tagsArrM.count; i++) {
             JMColumnMenuModel *model = self.tagsArrM[i];
@@ -281,7 +296,7 @@
         self.editBtnStr = @"编辑";
         [self.headerView.editBtn setTitle:@"编辑" forState:UIControlStateNormal];
         
-        [self.collectionView removeGestureRecognizer:self.longPress];
+//        [self.collectionView removeGestureRecognizer:self.longPress];
         
         for (int i = 0; i < self.tagsArrM.count; i++) {
             JMColumnMenuModel *model = self.tagsArrM[i];
