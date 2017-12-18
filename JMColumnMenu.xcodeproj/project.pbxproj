@@ -22,6 +22,7 @@
 		CB0FCFAF1FDFA0B40075C50B /* JMColumnMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FCFA81FDFA0B30075C50B /* JMColumnMenuCell.m */; };
 		CB0FCFB11FDFA0B40075C50B /* JMColumnMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0FCFAA1FDFA0B30075C50B /* JMColumnMenuHeaderView.m */; };
 		CB6FF4FE1FE0EE6600BA9A39 /* JMColumnMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB6FF4FD1FE0EE6600BA9A39 /* JMColumnMenu.bundle */; };
+		CBAA51991FE7828E007BFEEE /* JMColumnMenuFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAA51981FE7828E007BFEEE /* JMColumnMenuFooterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		CB0FCFAA1FDFA0B30075C50B /* JMColumnMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMColumnMenuHeaderView.m; sourceTree = "<group>"; };
 		CB6FF4FD1FE0EE6600BA9A39 /* JMColumnMenu.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JMColumnMenu.bundle; sourceTree = "<group>"; };
 		CB6FF4FF1FE0EEA500BA9A39 /* JMColumnMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMColumnMenu.h; sourceTree = "<group>"; };
+		CBAA51971FE7828E007BFEEE /* JMColumnMenuFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMColumnMenuFooterView.h; sourceTree = "<group>"; };
+		CBAA51981FE7828E007BFEEE /* JMColumnMenuFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMColumnMenuFooterView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +168,10 @@
 				CB0FCFA81FDFA0B30075C50B /* JMColumnMenuCell.m */,
 				CB0FCFA51FDFA0B30075C50B /* JMColumnMenuModel.h */,
 				CB0FCF9E1FDFA0B30075C50B /* JMColumnMenuModel.m */,
-				CB0FCFAA1FDFA0B30075C50B /* JMColumnMenuHeaderView.m */,
 				CB0FCFA31FDFA0B30075C50B /* JMColumnMenuHeaderView.h */,
+				CB0FCFAA1FDFA0B30075C50B /* JMColumnMenuHeaderView.m */,
+				CBAA51971FE7828E007BFEEE /* JMColumnMenuFooterView.h */,
+				CBAA51981FE7828E007BFEEE /* JMColumnMenuFooterView.m */,
 				CB0FCFA71FDFA0B30075C50B /* UIView+JM.h */,
 				CB0FCFA01FDFA0B30075C50B /* UIView+JM.m */,
 			);
@@ -314,6 +319,7 @@
 				CB0FCFAB1FDFA0B40075C50B /* JMColumnMenuModel.m in Sources */,
 				CB0FCF7B1FDFA0310075C50B /* main.m in Sources */,
 				CB0FCFB11FDFA0B40075C50B /* JMColumnMenuHeaderView.m in Sources */,
+				CBAA51991FE7828E007BFEEE /* JMColumnMenuFooterView.m in Sources */,
 				CB0FCF6D1FDFA0310075C50B /* AppDelegate.m in Sources */,
 				CB0FCFAF1FDFA0B40075C50B /* JMColumnMenuCell.m in Sources */,
 			);

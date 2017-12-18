@@ -9,11 +9,13 @@
 #import "JMColumnMenu.h"
 #import "JMColumnMenuCell.h"
 #import "JMColumnMenuHeaderView.h"
+#import "JMColumnMenuFooterView.h"
 #import "JMColumnMenuModel.h"
 #import "UIView+JM.h"
 
 #define CELLID @"CollectionViewCell"
 #define HEADERID @"headerId"
+#define FOOTERID @"footerId"
 
 @interface JMColumnMenu ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -32,7 +34,7 @@
 /** 头部视图 */
 @property (nonatomic, weak) JMColumnMenuHeaderView *headerView;
 /** 头部视图1 */
-@property (nonatomic, weak) JMColumnMenuHeaderView *headerView1;
+@property (nonatomic, weak) JMColumnMenuFooterView *footerView;
 /** 长按手势 */
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPress;
 /** 引用headView编辑字符串 */
@@ -149,6 +151,7 @@
     //注册cell
     [self.collectionView registerClass:[JMColumnMenuCell class] forCellWithReuseIdentifier:CELLID];
     [self.collectionView registerClass:[JMColumnMenuHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HEADERID];
+    [self.collectionView registerClass:[JMColumnMenuFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:FOOTERID];
     
     //添加长按的手势
     self.longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
@@ -235,10 +238,6 @@
     if([kind isEqualToString:UICollectionElementKindSectionHeader])
     {
         JMColumnMenuHeaderView *headerView = [self.collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:HEADERID forIndexPath:indexPath];
-        if(headerView == nil)
-        {
-            headerView = [[JMColumnMenuHeaderView alloc] init];
-        }
         if (indexPath.section == 0) {
             headerView.titleStr = @"已选频道";
             headerView.detailStr = @"按住拖动调整排序";
@@ -247,13 +246,17 @@
                 headerView.editBtn.hidden = NO;
                 [headerView.editBtn addTarget:self action:@selector(headViewEditBtnClick) forControlEvents:UIControlEventTouchUpInside];
             }
-        } else if (indexPath.section == 1) {
-            headerView.editBtn.hidden = YES;
-            headerView.titleStr = @"频道推荐";
-            headerView.detailStr = @"点击添加频道";
         }
         self.headerView = headerView;
         return headerView;
+    } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+        JMColumnMenuFooterView *footerView = [self.collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:FOOTERID forIndexPath:indexPath];
+        if (indexPath.section == 0) {
+            footerView.titleStr = @"频道推荐";
+            footerView.detailStr = @"点击添加频道";
+        }
+        self.footerView = footerView;
+        return footerView;
     }
     return nil;
 }
@@ -300,12 +303,24 @@
 
 //头部视图的大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return CGSizeMake(0, 40);
+    if (section == 0) {
+        return CGSizeMake(self.view.width, 40);
+    } else {
+        return CGSizeMake(0, 0);
+    }
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    if (section == 0) {
+        return CGSizeMake(self.view.width, 40);
+    } else {
+        return CGSizeMake(0, 0);
+    }
+}
 
 //定义每一个cell的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     return CGSizeMake(self.collectionView.width * 0.25 - 10, 53);
 }
 
@@ -449,15 +464,11 @@
     if ([self.delegate respondsToSelector:@selector(columnMenuTagsArr:OtherArr:)]) {
         [self.delegate columnMenuTagsArr:tempTagsArrM OtherArr:tempOtherArrM];
     }
-    
-    if (self.otherArrM.count <= 0 || self.otherArrM == nil) {
-//        NSLog(@"%@",self.headerView);
-        self.headerView.hidden = YES;
-        [self.collectionView reloadData];
+    if (self.otherArrM.count <= 0) {
+        self.footerView.hidden = YES;
     } else {
-        self.headerView.hidden = NO;
+        self.footerView.hidden = NO;
     }
-    
 }
 
 #pragma mark - 导航栏右侧关闭按钮点击事件

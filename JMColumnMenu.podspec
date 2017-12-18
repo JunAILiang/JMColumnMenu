@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JMColumnMenu"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "对腾讯新闻、今日头条等栏目管理的封装, 一行代码调用"
 
   s.description  = <<-DESC
