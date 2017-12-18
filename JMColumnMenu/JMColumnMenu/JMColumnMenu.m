@@ -465,4 +465,24 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)setNavTitleStr:(NSString *)navTitleStr {
+    _navTitleStr = navTitleStr;
+    self.navTitle.text = navTitleStr;
+}
+
+- (void)setNavBackgroundColor:(UIColor *)navBackgroundColor {
+    _navBackgroundColor = navBackgroundColor;
+    self.navView.backgroundColor = navBackgroundColor;
+}
+
+- (void)setNavTitleColor:(UIColor *)navTitleColor {
+    _navTitleColor = navTitleColor;
+    self.navTitle.textColor = navTitleColor;
+}
+
+- (void)setNavRightIV:(UIImage *)navRightIV {
+    _navRightIV = navRightIV;
+    [self.navCloseBtn setImage:navRightIV forState:UIControlStateNormal];
+}
+
 @end

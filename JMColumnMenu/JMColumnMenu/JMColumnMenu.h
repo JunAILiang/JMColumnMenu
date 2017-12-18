@@ -41,5 +41,12 @@ typedef NS_ENUM(NSInteger, JMColumnMenuType) {
 @property (nonatomic, weak) id <JMColumnMenuDelegate>delegate;
 /** 类型 */
 @property (nonatomic, assign) JMColumnMenuType type;
-
+/** 导航栏的背景颜色 */
+@property (nonatomic, strong) UIColor *navBackgroundColor;
+/** 导航栏文字颜色 */
+@property (nonatomic, strong) UIColor *navTitleColor;
+/** 导航栏文字 */
+@property (nonatomic, copy) NSString *navTitleStr;
+/** 导航栏右侧关闭按钮 */
+@property (nonatomic, strong) UIImage *navRightIV;
 @end
