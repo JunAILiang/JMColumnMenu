@@ -2,7 +2,7 @@
 仿腾讯新闻、今日头条栏目管理
 
 # 如何使用
-*   可以通过CocoaPods导入 ``` pod 'JMColumnMenu', '~> 1.0' ```
+*   可以通过CocoaPods导入 ``` pod 'JMColumnMenu', '~> 1.1.1' ```
 *   或者直接下载工程把JMColumnMenu导入到您的项目中
 
 
