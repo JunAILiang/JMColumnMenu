@@ -49,4 +49,5 @@ typedef NS_ENUM(NSInteger, JMColumnMenuType) {
 @property (nonatomic, copy) NSString *navTitleStr;
 /** 导航栏右侧关闭按钮 */
 @property (nonatomic, strong) UIImage *navRightIV;
+
 @end

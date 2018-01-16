@@ -67,7 +67,7 @@
         self.type = type;
         self.delegate = delegate;
         self.editBtnStr = @"编辑";
-        
+
         for (int i = 0; i < tagsArrM.count; i++) {
             JMColumnMenuModel *model = [[JMColumnMenuModel alloc] init];
             model.title = tagsArrM[i];
